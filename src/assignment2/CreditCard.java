@@ -34,11 +34,6 @@ public class CreditCard {
     }
 
     public boolean validateLength(){
-        // this regex will do both validating number and length
-        // return this.ccNumber.matches("^[0-9]{13,16}$");
-        // but let's not use regex for simplicity
-
-//        System.out.println("Valid length: " + !((this.ccNumber.length() < 13) || (this.ccNumber.length() > 16)));
 
         if((this.ccNumber.length() < 13) || (this.ccNumber.length() > 16))
             return false;
