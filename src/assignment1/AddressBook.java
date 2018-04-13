@@ -4,7 +4,7 @@ package assignment1;
  * Created by KayLee on 16/02/2018.
  */
 public class AddressBook {
-
+    private String businessPhone;
     private String firstName;
     private String middleName;
     private String lastName;
@@ -14,6 +14,14 @@ public class AddressBook {
     private String skypeId;
     private String facebookId;
     private String personalWebsite;
+
+    public String getBusinessPhone() {
+        return businessPhone;
+    }
+
+    public void setBusinessPhone(String businessPhone) {
+        this.businessPhone = businessPhone;
+    }
 
     public String getPersonalWebsite() {
         return personalWebsite;
@@ -47,7 +55,7 @@ public class AddressBook {
     }
 
     public void setCellPhone(String cellPhone) {
-        String pattern = "\\d{11}|(?:\\d{4}-){1}\\d{3}-){1}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}";
+        String pattern = "\\d{11}|(?:\\d{4}-){1}(\\d{3}-){1}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}";
         if(cellPhone.matches(pattern))
             this.cellPhone = cellPhone;
     }
@@ -100,19 +108,60 @@ public class AddressBook {
             this.firstName = firstName;
     }
 
-    public String compareNames(String name1, String name2){
+    public static String compareNames(String name1, String name2){
         String[] names1 = name1.split("\\s");
-        String[] names2 = name1.split("\\s");
+        AddressBook person1 = new AddressBook(names1[0], names1[1], names1[2]);
 
-        if(names1.length != names2.length)
-            return "false";
+        String[] names2 = name2.split("\\s");
+        AddressBook person2 = new AddressBook(names2[0], names2[1], names2[2]);
 
-        for(int i = 0; i < names1.length; i++){
-            return (names1[i].equalsIgnoreCase(names2[i]))?"true":"false";
+        boolean[] status = {false, false, false};
+
+        if(names1.length == names2.length){
+            for(int i = 0; i < names1.length; i++){
+                if(names1[i].equalsIgnoreCase(names2[i]))
+                    status[i] = true;
+            }
         }
 
-        return "true";
+        if(status[0] && status[1] && status[2])
+            return "The names are the same";
+        else
+            return "Sorry, the names are different";
     }
 
+    public AddressBook(String fn){
+        this.firstName = fn;
+    }
+
+    public AddressBook(String fn, String mn){
+        this.firstName = fn;
+        this.middleName = mn;
+    }
+
+    public AddressBook(String fn, String mn, String ln){
+        this.firstName = fn;
+        this.middleName = mn;
+        this.lastName = ln;
+    }
+
+    public AddressBook(String fn, String mn, String ln, String homeAddress,
+                       String businessPhone, String homePhone, String cellPhone,
+                       String skypeId, String facebookId, String personalWebsite){
+        this.firstName = fn;
+        this.lastName = ln;
+        this.middleName = mn;
+        this.homeAddress = homeAddress;
+        this.businessPhone = businessPhone;
+        this.homePhone = homePhone;
+        this.cellPhone = cellPhone;
+        this.skypeId = skypeId;
+        this.facebookId = facebookId;
+        this.personalWebsite = personalWebsite;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(AddressBook.compareNames("Mbakwe Caleb Chukwuzugo", "Mbakwe Caleb Chukwuzugo"));
+    }
 
 }

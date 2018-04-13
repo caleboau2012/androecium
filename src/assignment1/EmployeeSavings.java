@@ -24,13 +24,11 @@ public class EmployeeSavings extends AddressBook {
     }
 
     public EmployeeSavings(String fn, String ln){
-        super.setFirstName(fn);
-        super.setLastName(ln);
+        super(fn, "", ln);
     }
 
     public EmployeeSavings(String fn, String ln, double[] d1, double[] d2){
-        super.setFirstName(fn);
-        super.setLastName(ln);
+        super(fn, "", ln);
         this.monthlyInterests = d1;
         this.monthlySavings = d2;
     }

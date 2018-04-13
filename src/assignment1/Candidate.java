@@ -44,8 +44,7 @@ public class Candidate extends AddressBook{
     }
 
     public Candidate(String fn, String ln, double grade, String comm, boolean innov, double reg){
-        super.setFirstName(fn);
-        super.setLastName(ln);
+        super(fn, "", ln);
         this.setGrade(grade);
         this.setCommunication(comm);
         this.setInnovation(innov);

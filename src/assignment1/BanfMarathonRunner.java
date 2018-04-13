@@ -24,8 +24,7 @@ public class BanfMarathonRunner extends AddressBook {
     }
 
     public BanfMarathonRunner(String fn, String ln, int min, int yr){
-        super.setFirstName(fn);
-        super.setLastName(ln);
+        super(fn, "", ln);
         this.setTime(min);
         this.setYears(yr);
     }
