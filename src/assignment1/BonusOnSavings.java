@@ -36,4 +36,11 @@ public class BonusOnSavings {
         else
             return 0;
     }
+
+    public static void main(String[] args) {
+        BonusOnSavings b = new BonusOnSavings();
+
+        System.out.println(b.computeBonus(2000, 5000, 7000, 4000, 8000));
+        System.out.println(b.computeBonus(3000, 6000, 9000, 10000, 17000));
+    }
 }
