@@ -87,4 +87,29 @@ public class BanfMarathonRunner extends AddressBook {
         return "Done";
     }
 
+    public static void main(String[] args) {
+        BanfMarathonRunner[] runners = {
+                new BanfMarathonRunner("Elena", "Brandon", 341, 1),
+                new BanfMarathonRunner("Thomas", "Molson", 273, 2),
+                new BanfMarathonRunner("Hamilton", "Win", 278, 5),
+                new BanfMarathonRunner("Suzie", "Sarandin", 329, 7),
+                new BanfMarathonRunner("Philip", "Winne", 445, 9),
+                new BanfMarathonRunner("Alex", "Trebok", 275, 3),
+                new BanfMarathonRunner("Emma", "Pivoto", 275, 4),
+                new BanfMarathonRunner("John", "Lenthen", 243, 1),
+                new BanfMarathonRunner("James", "Lean", 334, 1),
+                new BanfMarathonRunner("Jane", "Ostin", 412, 1),
+                new BanfMarathonRunner("Emily", "Car", 393, 4),
+                new BanfMarathonRunner("Daniel", "Hamshire", 299, 4),
+                new BanfMarathonRunner("Neda", "Bazdar", 343, 3),
+                new BanfMarathonRunner("Aaron", "Smith", 317, 6),
+                new BanfMarathonRunner("Kate", "Hen", 265, 8)
+        };
+
+//        BanfMarathonRunner.getFastestRunner(runners);
+        BanfMarathonRunner.getSecondFastestRunner(runners);
+        System.out.println(BanfMarathonRunner.getAverageTime(runners));
+        BanfMarathonRunner.getAboveAverageRunners(runners);
+    }
+
 }

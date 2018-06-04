@@ -34,9 +34,25 @@ public class Triangle {
         return Math.sqrt((Math.pow(c, 2) - (Math.pow(a, 2))));
     }
 
+    public Triangle(){
+
+    }
+
     public Triangle(double a, double b, double c){
         this.a = a;
         this.b = b;
         this.c = c;
+    }
+
+    public static void main(String[] args) {
+        Triangle t = new Triangle();
+        System.out.println(t.getBgivenAC(48, 80));
+        System.out.println(t.getBgivenAC(84, 91));
+
+        t = new Triangle(45, 55, 75);
+        System.out.println(t.isRightTriangle());
+
+        t = new Triangle(28, 45, 53);
+        System.out.println(t.isRightTriangle());
     }
 }

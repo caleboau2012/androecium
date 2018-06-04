@@ -26,4 +26,8 @@ public class HailstoneSequence {
 
         return numbers;
     }
+
+    public static void main(String[] args) {
+        System.out.println(HailstoneSequence.getHailstoneSequence(15));
+    }
 }

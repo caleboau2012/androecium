@@ -1,5 +1,6 @@
 package assignment1;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -75,5 +76,10 @@ public class EmployeeSavings extends AddressBook {
         }
 
         return s.toString();
+    }
+
+    public static void main(String[] args) {
+        EmployeeSavings e = new EmployeeSavings("Address", "Book", new double[15], new double[15]);
+        System.out.println(Arrays.toString(e.calculateInterests()));
     }
 }
